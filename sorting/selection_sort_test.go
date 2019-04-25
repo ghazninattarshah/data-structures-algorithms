@@ -1,11 +1,16 @@
 package sorting
 
 import (
+	"math/rand"
 	"reflect"
 	"testing"
+
+	"github.com/ghazninattarshah/data-structures-algorithms/utils"
 )
 
 func TestSelectionSort(t *testing.T) {
+
+	randomSlice, sortedSlice := utils.GetTestArrayForSorting(int(rand.Int31n(100)))
 
 	tests := []struct {
 		Name     string
@@ -36,6 +41,11 @@ func TestSelectionSort(t *testing.T) {
 			"SizeOfOne",
 			[]int{5},
 			[]int{5},
+		},
+		{
+			"RandomNumbers",
+			randomSlice,
+			sortedSlice,
 		},
 	}
 
